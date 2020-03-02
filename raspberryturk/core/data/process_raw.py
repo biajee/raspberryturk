@@ -104,7 +104,7 @@ def main():
                     img = cv2.imread(img_path)
                     _process(board, img, target_path)
     with open(cache_path, 'w') as f:
-        f.write("\n".join(cache.keys()))
+        f.write("\n".join(list(cache.keys())))
 
 if __name__ == '__main__':
     main()

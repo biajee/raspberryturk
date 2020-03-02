@@ -5,8 +5,8 @@ from pytweening import easeInOutQuint, easeOutSine
 from scipy.misc import derivative
 from scipy.interpolate import interp1d
 from raspberryturk.embedded.motion.arm_movement_engine import ArmMovementEngine
-from pypose.ax12 import *
-from pypose.driver import Driver
+from .pypose.ax12 import *
+from .pypose.driver import Driver
 
 SERVO_1 = 1
 SERVO_2 = 2

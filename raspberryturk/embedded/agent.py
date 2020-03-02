@@ -49,7 +49,7 @@ class Agent(object):
         cbm_board = pawn_board_from_colored_board_mask(cbm)
         pgn = game.pgn()
         formatted_datetime = time.strftime("%x %X")
-        text = unicode("\n\n").join([formatted_datetime, unicode(cbm_board), unicode(b), pgn])
+        text = str("\n\n").join([formatted_datetime, str(cbm_board), str(b), pgn])
         with io.open(lib_path('status.txt'), 'w', encoding='utf8') as f:
             f.write(text)
 

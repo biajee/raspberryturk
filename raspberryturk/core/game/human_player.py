@@ -46,7 +46,7 @@ def main():
     logger.info("connecting to {}".format(SERVER_ADDRESS))
     try:
         sock.connect(SERVER_ADDRESS)
-    except socket.error, msg:
+    except socket.error as msg:
         logger.error(msg)
         raise RaspberryTurkError("There was a problem connecting to {}".format(SERVER_ADDRESS))
     try:

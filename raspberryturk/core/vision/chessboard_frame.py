@@ -1,6 +1,6 @@
 import numpy as np
-from square import Square
-from constants import SQUARE_SIZE, BOARD_SIZE
+from .square import Square
+from .constants import SQUARE_SIZE, BOARD_SIZE
 
 class ChessboardFrame():
     def __init__(self, img):

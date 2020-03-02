@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
   PyPose: Serial driver for connection to arbotiX board or USBDynamixel.
@@ -26,7 +26,7 @@ import serial
 import time
 import sys
 from binascii import b2a_hex
-from ax12 import *
+from .ax12 import *
 import logging
 
 class Driver:

@@ -1,5 +1,5 @@
 def _symbols_dict(symbols):
-    return dict(zip(symbols, range(len(symbols))))
+    return dict(list(zip(symbols, list(range(len(symbols))))))
 
 _COLOR_PIECE_SYMBOLS = _symbols_dict(['p', 'n', 'b', 'r', 'q', 'k', 'P', 'N', 'B', 'R', 'Q', 'K', None])
 _COLOR_PIECE_SYMBOLS_NOEMPTY = _symbols_dict(['p', 'n', 'b', 'r', 'q', 'k', 'P', 'N', 'B', 'R', 'Q', 'K'])
@@ -27,7 +27,7 @@ def empty_or_not(piece_symbol):
 def white_or_black(piece_symbol):
     if piece_symbol == 'e':
         piece_symbol = None
-    if piece_symbol not in _COLOR_PIECE_SYMBOLS.keys():
+    if piece_symbol not in list(_COLOR_PIECE_SYMBOLS.keys()):
         return -1
     else:
         if piece_symbol is None:
@@ -37,28 +37,28 @@ def white_or_black(piece_symbol):
 
 @_num_classes(2)
 def white_or_black_noempty(piece_symbol):
-    if piece_symbol not in _COLOR_PIECE_SYMBOLS_NOEMPTY.keys():
+    if piece_symbol not in list(_COLOR_PIECE_SYMBOLS_NOEMPTY.keys()):
         return -1
     else:
         return int(not piece_symbol.islower())
 
-@_num_classes(len(_COLOR_PIECE_SYMBOLS.keys()))
+@_num_classes(len(list(_COLOR_PIECE_SYMBOLS.keys())))
 def color_piece(piece_symbol):
     return _dict_lookup(_COLOR_PIECE_SYMBOLS, piece_symbol)
 
-@_num_classes(len(_COLOR_PIECE_SYMBOLS_NOEMPTY.keys()))
+@_num_classes(len(list(_COLOR_PIECE_SYMBOLS_NOEMPTY.keys())))
 def color_piece_noempty(piece_symbol):
     return _dict_lookup(_COLOR_PIECE_SYMBOLS_NOEMPTY, piece_symbol)
 
-@_num_classes(len(_PIECE_SYMBOLS.keys()))
+@_num_classes(len(list(_PIECE_SYMBOLS.keys())))
 def piece(piece_symbol):
     return _dict_lookup(_PIECE_SYMBOLS, piece_symbol)
 
-@_num_classes(len(_PIECE_SYMBOLS_NOEMPTY.keys()))
+@_num_classes(len(list(_PIECE_SYMBOLS_NOEMPTY.keys())))
 def piece_noempty(piece_symbol):
     return _dict_lookup(_PIECE_SYMBOLS_NOEMPTY, piece_symbol)
 
-@_num_classes(len(_PROMOTABLE_PIECE_SYMBOLS.keys()))
+@_num_classes(len(list(_PROMOTABLE_PIECE_SYMBOLS.keys())))
 def promotable_piece(piece_symbol):
     return _dict_lookup(_PROMOTABLE_PIECE_SYMBOLS, piece_symbol)
 
