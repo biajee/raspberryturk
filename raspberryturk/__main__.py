@@ -49,7 +49,11 @@ def _get_args():
 def main():
     args = _get_args()
     assert raspberryturk.is_running_on_raspberryturk(), "Must be running on raspberryturk"
-    args.func(args)
+    try:
+        func = args.func(args)
+    except AttributeError:
+        parser.error("too few arguments")
+    func(args)
 
 if __name__ == '__main__':
     main()
