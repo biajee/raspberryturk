@@ -6,7 +6,7 @@ import io
 import raspberryturk
 
 def _raspberryturkd(subcommand):
-    command = "python -m raspberryturk.embedded.raspberryturkd {}".format(subcommand)
+    command = "python3 -m raspberryturk.embedded.raspberryturkd {}".format(subcommand)
     os.system(command)
 
 def _start(args):
